@@ -2,10 +2,7 @@ from flask import Flask, request
 import tensorflow as tf
 import tensorflow_text as text
 
-dataset_name = 'imdb'
-saved_model_path = './{}_bert'.format(dataset_name.replace('/', '_'))
-reloaded_model = tf.saved_model.load(saved_model_path)
-
+reloaded_model = tf.saved_model.load("./imdb_bert")
 app = Flask(__name__)
 
 @app.route("/")
