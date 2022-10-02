@@ -11,5 +11,8 @@ def sentiment(text):
     else:
         return "Negative"
 
-iface = gr.Interface(fn=sentiment, inputs="text", outputs="text")
+iface = gr.Interface(
+    fn=sentiment,
+    inputs=gr.Textbox(label="input text"),
+    outputs="text")
 iface.launch()
